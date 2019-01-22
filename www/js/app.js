@@ -41,6 +41,7 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
             console.error('Document contains no viewables.');
             return;
         }
+        my_viewerApp.myCurrentViewer.prefs.tag('ignore-producer');
         // Choose any of the available viewables
         viewerApp.selectItem(viewables[0].data, onItemLoadSuccess, onItemLoadFail);
 
