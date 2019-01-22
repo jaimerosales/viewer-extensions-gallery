@@ -41,7 +41,6 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
             console.error('Document contains no viewables.');
             return;
         }
-        viewerApp.myCurrentViewer.prefs.tag('ignore-producer');
         // Choose any of the available viewables
         viewerApp.selectItem(viewables[0].data, onItemLoadSuccess, onItemLoadFail);
 
@@ -53,6 +52,7 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
 
     function onItemLoadSuccess(active_viewer, item) {
         console.log('Document loaded successfully');
+        viewerApp.myCurrentViewer.prefs.tag('ignore-producer');
     }
     function onItemLoadFail(errorCode) {
         console.error('onItemLoadFail() - errorCode:' + errorCode);
