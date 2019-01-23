@@ -53,6 +53,7 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
     function onItemLoadSuccess(active_viewer, item) {
         console.log('Document loaded successfully');
 
+        viewer = active_viewer;
         // add grid
         let grid = new THREE.GridHelper(200, 10);
         // grid.position.y = -29;
@@ -62,7 +63,7 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
         viewer.impl.scene.add(grid);
         viewer.impl.sceneUpdated(true);
     
-        viewerApp.myCurrentViewer.prefs.tag('ignore-producer');
+        viewer.prefs.tag('ignore-producer');
     }
     function onItemLoadFail(errorCode) {
         console.error('onItemLoadFail() - errorCode:' + errorCode);
