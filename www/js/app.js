@@ -52,7 +52,6 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
 
     function onItemLoadSuccess(active_viewer, item) {
         console.log('Document loaded successfully');
-
         viewer = active_viewer;
         // add grid
         let grid = new THREE.GridHelper(200, 10);
