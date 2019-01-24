@@ -4,7 +4,7 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
 
     let viewerApp = new Autodesk.Viewing.ViewingApplication(divId);
     my_viewerApp = viewerApp;
-
+   
     let options = {
         env: 'AutodeskProduction',
         getAccessToken: (onGetAccessToken) => {
@@ -16,8 +16,6 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
                     let expireTimeSeconds = data["expires_in"];
                     onGetAccessToken(accessToken, expireTimeSeconds);
                 })
-
-
         },
         useADP: false,
     };
@@ -25,7 +23,6 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
     let config3d = {
         extensions: extensionArray
     };
-
 
     Autodesk.Viewing.Initializer(options, function onInitialized() {
         viewerApp.registerViewer(viewerApp.k3D, Autodesk.Viewing.Private.GuiViewer3D, config3d);
@@ -43,7 +40,6 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
         }
         // Choose any of the available viewables
         viewerApp.selectItem(viewables[0].data, onItemLoadSuccess, onItemLoadFail);
-
     }
 
     function onDocumentLoadFailure(viewerErrorCode) {
@@ -53,21 +49,20 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
     function onItemLoadSuccess(active_viewer, item) {
         console.log('Document loaded successfully');
         viewer = active_viewer;
-        viewer.prefs.tag('ignore-producer');
+        
         // add grid
         let grid = new THREE.GridHelper(200, 10);
-        // grid.position.y = -29;
         grid.position.y = -68;
-        // grid.position.x = 15;
-        //grid.material.opacity = 0.5;
         grid.material.transparent = true;
         viewer.impl.scene.add(grid);
         viewer.impl.sceneUpdated(true);
+        
+        // switching theme
+        viewer.setTheme("light-theme");
     }
     function onItemLoadFail(errorCode) {
         console.error('onItemLoadFail() - errorCode:' + errorCode);
     }
-
 
     return viewerApp.getCurrentViewer();
 }

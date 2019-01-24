@@ -55,6 +55,7 @@
             console.error('Document contains no viewables.');
             return;
         }
+
         // Choose any of the available viewables
         viewerApp.selectItem(viewables[0].data, onItemLoadSuccess, onItemLoadFail);
     }
@@ -72,7 +73,12 @@
         grid.material.transparent = true;
         viewer.impl.scene.add(grid);
         viewer.impl.sceneUpdated(true);
-        viewer.loadExtension('Autodesk.ADN.Viewing.Extension.TransformTool');
+
+        viewer.addEventListener(Autodesk.Viewing.GEOMETRY_LOADED_EVENT, () => {
+            console.log("geom loaded");
+            viewer.loadExtension('Autodesk.ADN.Viewing.Extension.TransformTool')
+        });
+        
     }
     function onItemLoadFail(errorCode) {
         console.error('onItemLoadFail() - errorCode:' + errorCode);
