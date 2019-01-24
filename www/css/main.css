@@ -3,11 +3,6 @@ body {
     padding: 0;
 }
 
-#MyViewerDiv {
-    border: 1px solid #D4D4D4;
-}
-
-
 #MyControls {
     position: absolute;
     /* top: 5px; */
