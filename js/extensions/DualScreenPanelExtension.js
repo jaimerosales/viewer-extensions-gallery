@@ -36,7 +36,7 @@ DualScreenPanelExtension.prototype.createUI = function () {
 
        
 
-        alert("open 2D dock")
+        alert("open 2D dock and testing new deployment pipeline")
 
     };
     // DualScreenPanelToolbarButton CSS class should be defined on your .css file
