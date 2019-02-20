@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#MyControls {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    z-index: 1;
+    border: 1px solid #D4D4D4;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#autodesk_logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+}
+#autodesk_logo img {
+    max-width: 50%;
+}
+
+#myUI {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-column-gap: 5px;
+    grid-row-gap: 2px;
+    pointer-events: bounding-box;
+}
+
+
+.element {
+    background-color: rgba(0,127,127,0.5);
+    width: 120px;
+    box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
+    border: 1px solid rgba(127,255,255,0.25);
+    text-align: center;
+}
+
+.element:hover {
+    box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+    border: 1px solid rgba(127,255,255,0.75);
+}
+
+.cssOverlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+.toolbarCameraRotation {
+    background-image: url(../img/emblem_camera.png);
+    background-size: 36px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ScreenShotToolbarButton {
+    background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' data-prefix='fas' data-icon='camera-retro' class='svg-inline--fa fa-camera-retro fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='currentColor' d='M48 32C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H48zm0 32h106c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H38c-3.3 0-6-2.7-6-6V80c0-8.8 7.2-16 16-16zm426 96H38c-3.3 0-6-2.7-6-6v-36c0-3.3 2.7-6 6-6h138l30.2-45.3c1.1-1.7 3-2.7 5-2.7H464c8.8 0 16 7.2 16 16v74c0 3.3-2.7 6-6 6zM256 424c-66.2 0-120-53.8-120-120s53.8-120 120-120 120 53.8 120 120-53.8 120-120 120zm0-208c-48.5 0-88 39.5-88 88s39.5 88 88 88 88-39.5 88-88-39.5-88-88-88zm-48 104c-8.8 0-16-7.2-16-16 0-35.3 28.7-64 64-64 8.8 0 16 7.2 16 16s-7.2 16-16 16c-17.6 0-32 14.4-32 32 0 8.8-7.2 16-16 16z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.DualScreenToolbarButton{
+    background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' data-prefix='fab' data-icon='laravel' class='svg-inline--fa fa-laravel fa-w-20' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'%3E%3Cpath fill='currentColor' d='M637.5 241.6c-4.2-4.8-62.8-78.1-73.1-90.5-10.3-12.4-15.4-10.2-21.7-9.3-6.4.9-80.5 13.4-89.1 14.8-8.6 1.5-14 4.9-8.7 12.3 4.7 6.6 53.4 75.7 64.2 90.9l-193.7 46.4L161.2 48.7c-6.1-9.1-7.4-12.3-21.4-11.6-14 .6-120.9 9.5-128.5 10.2-7.6.6-16 4-8.4 22s129 279.6 132.4 287.2c3.4 7.6 12.2 20 32.8 15 21.1-5.1 94.3-24.2 134.3-34.7 21.1 38.3 64.2 115.9 72.2 127 10.6 14.9 18 12.4 34.3 7.4 12.8-3.9 199.6-71.1 208-74.5 8.4-3.5 13.6-5.9 7.9-14.4-4.2-6.2-53.5-72.2-79.3-106.8 17.7-4.7 80.6-21.4 87.3-23.3 7.9-2 9-5.8 4.7-10.6zm-352.2 72c-2.3.5-110.8 26.5-116.6 27.8-5.8 1.3-5.8.7-6.5-1.3-.7-2-129-266.7-130.8-270-1.8-3.3-1.7-5.9 0-5.9s102.5-9 106-9.2c3.6-.2 3.2.6 4.5 2.8 0 0 142.2 245.4 144.6 249.7 2.6 4.3 1.1 5.6-1.2 6.1zm306 57.4c1.7 2.7 3.5 4.5-2 6.4-5.4 2-183.7 62.1-187.1 63.6-3.5 1.5-6.2 2-10.6-4.5s-62.4-106.8-62.4-106.8L518 280.6c4.7-1.5 6.2-2.5 9.2 2.2 2.9 4.8 62.4 85.5 64.1 88.2zm12.1-134.1c-4.2.9-73.6 18.1-73.6 18.1l-56.7-77.8c-1.6-2.3-2.9-4.5 1.1-5s68.4-12.2 71.3-12.8c2.9-.7 5.4-1.5 9 3.4 3.6 4.9 52.6 67 54.5 69.4 1.8 2.3-1.4 3.7-5.6 4.7z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.TransformToolToolbarButton {
+    background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='arrows-alt' class='svg-inline--fa fa-arrows-alt fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='currentColor' d='M352.201 425.775l-79.196 79.196c-9.373 9.373-24.568 9.373-33.941 0l-79.196-79.196c-15.119-15.119-4.411-40.971 16.971-40.97h51.162L228 284H127.196v51.162c0 21.382-25.851 32.09-40.971 16.971L7.029 272.937c-9.373-9.373-9.373-24.569 0-33.941L86.225 159.8c15.119-15.119 40.971-4.411 40.971 16.971V228H228V127.196h-51.23c-21.382 0-32.09-25.851-16.971-40.971l79.196-79.196c9.373-9.373 24.568-9.373 33.941 0l79.196 79.196c15.119 15.119 4.411 40.971-16.971 40.971h-51.162V228h100.804v-51.162c0-21.382 25.851-32.09 40.97-16.971l79.196 79.196c9.373 9.373 9.373 24.569 0 33.941L425.773 352.2c-15.119 15.119-40.971 4.411-40.97-16.971V284H284v100.804h51.23c21.382 0 32.09 25.851 16.971 40.971z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}

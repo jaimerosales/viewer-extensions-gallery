@@ -58,6 +58,7 @@ function setupViewer(divId, documentId, tokenFetchingUrl, exrtensionArray) {
         viewer.impl.sceneUpdated(true);
         
         // switching theme
+        // viewer.unloadExtension("Autodesk.BimWalk");
         viewer.setTheme("light-theme");
     }
     function onItemLoadFail(errorCode) {
